@@ -1,0 +1,81 @@
+<html>
+<head>
+<style>
+#drag, #div2 {
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+</style></head>
+<body>
+<h1>
+Hi!!
+</h1>
+Hello
+<div><br></br>
+<br>Enter your Text: <input type=text name="text" id="text"></input></br>
+<input type=radio name="sex" id="Male" value="Radio" class="Radio">Male</input>
+<input type=radio name="sex" id="Female" value="Radio">Female</input>
+</div>
+<p><input type="file" id="file">
+<input type="submit" id="submit" onclick="MySubmit()">
+<div>
+<button name="alert" onclick="Myalert();">Alert!!</button>
+<button name="confirm" onclick="Myconfirm();">Confirm</button>
+<button name="prompt" onclick="Myprompt();">Prompt</button>
+</div>
+<div><br><button name="windowPopup" onclick="window.open('https://www.facebook.com/')">PopUp</button></br></div>
+<div><br><button name="delay" onclick="Delay()">Delay</button></br></div>
+<script type="text/javascript">
+function Myalert(){
+alert("Alert");
+}
+</script>
+<script type="text/javascript">
+function Myconfirm(){
+window.confirm("Press Ok or Cancel");
+}
+</script>
+<script type="text/javascript">
+function Myprompt(){
+window.prompt("Enter a value");
+}
+</script>
+<script type="text/javascript">
+function Myprompt(){
+var name=window.prompt("Enter a value");
+window.alert(name);
+}
+</script>
+<script type="text/javascript">
+function MySubmit(){
+window.alert("File Submitted");
+}
+</script>
+<script type="text/javascript">
+function Delay(){
+console.log("Hello");
+setTimeout(() => {  window.alert("This is a delay!"); }, 5000);
+}
+</script>
+<script type="text/javascript">
+function allowdrop(a){
+a.preventDefault();
+}
+function drag(a){
+a.dataTransfer.setData("text",a.target.id);
+}
+function drop(a){
+a.preventDefault();
+var data=a.dataTransfer.getData("text");
+a.target.appendChild(document.getElementById(data));
+}</script>
+<br><iframe src="./test.html" id="iFrame" name="iFrame" title="Facebook" width=500 height=300></iframe></br>
+<br><input type="checkbox" name="checkbox" text="Hi" id="checkbox">I Accept the agreement</input></br>
+<br></br>
+<br>Enter your Text once again: <input type=text name="text2" id="text2"></input></br>
+</body>
+</html>
